@@ -1,0 +1,537 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html body {
+    width: 100%;
+    height: 100%;
+    background: #F2F2F2;
+    font-family: "Microsoft YaHei", Verdana, Geneva, sans-serif;
+    /*设置字体为微软雅黑*/
+}
+a{text-decoration: none;}
+
+/*************************加载界面**************************/
+#main-pag {
+    background-color: darkcyan;
+    background-size: 100% 100%;
+    position: fixed;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    z-index: 999;
+    display: block;
+    animation-delay: 4s;
+    padding-top: 200px;
+}
+
+.loading-logo {
+    font-size: 80px;
+    color: white;
+    height: 200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.loading-text {
+    font-size: 30px;
+    color: white;
+    width: 800px;
+    height: 200px;
+    margin: 0 auto;
+    padding-top: 200px;
+    text-align: center;
+}
+
+.loading-pag {
+    overflow: hidden;
+    width: 70%;
+    height: 30px;
+    position: absolute;
+    top: 45%;
+    left: 15%;
+    border-radius: 15px;
+    border: 3px solid white;
+}
+
+.loading {
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    background-color: crimson;
+    animation-duration: 8s;
+}
+
+/***************登录界面***************************/
+#login {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+	z-index: 1;
+}
+#login iframe{
+    border: 2px solid black;
+    border-radius: 10px;
+}
+#close-login{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-weight: 900;
+	background-image: url(../img/close.png);
+	width: 30px;
+	height: 30px;
+    background-size: 100% 100%;
+    cursor: pointer;
+    /*把鼠标指针改为小手*/
+}
+
+/******************************头部导航栏***************************/
+#header {
+    width: 100%;
+    height: 65px;
+}
+
+#header iframe {
+    width: 100%;
+    height: 70px;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    background-color: #1b1b1b;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header ul {
+    line-height: 60px;
+}
+
+.header #logo {
+    width: 200px;
+    font-size: 30px;
+    margin-left: 100px;
+}
+
+.header ul li {
+    width: 100px;
+    line-height: 60px;
+    font-size: 20px;
+    list-style: none;
+    float: left;
+    user-select: none;
+}
+
+.header ul li a {
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+}
+
+.header ul li:hover {
+    background: #383c5c;
+    opacity: 0.8;
+}
+
+#load-o{
+    float: right;
+    margin-right: 100px;
+    cursor: pointer;
+}
+#load-o a{
+    color: #ffbd00;
+}
+#load-o a:hover{
+    color: #58d7dd;
+}
+
+/*******************************头部导航栏结束******************/
+
+/****************************轮播图***********************************/
+
+.view {
+    width: 80%;
+    height: 500px;
+    overflow: hidden;
+    margin: 35px auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* 阴影 */
+}
+
+.view img {
+    width: 101%;
+    height: 500px;
+    object-fit: cover;
+    height: auto;
+}
+
+.view ul {
+    width: 300%;
+    /* transition: all 0.5s; */
+    animation: mLeft 20s infinite;
+}
+
+.view li {
+    width: 33.33%;
+    list-style: none;
+    float: left;
+    position: relative;
+}
+
+#v-left {
+    position: absolute;
+    top: 400px;
+    right: 50px;
+    font-size: 25px;
+    color: #000000;
+    background-color: #FFFFFF;
+    padding: 0 30px;
+    height: 50px;
+    line-height: 50px;
+    opacity: 0.7;
+    text-decoration: none;
+    cursor: pointer;
+    /*把鼠标指针改为小手*/
+    user-select: none;
+    /*禁止选中文字*/
+}
+
+@keyframes mLeft {
+    0% {
+        margin-left: 0;
+    }
+
+    30% {
+        margin-left: 0;
+    }
+
+    33.3% {
+        margin-left: -100%;
+    }
+
+    63.3% {
+        margin-left: -100%;
+    }
+
+    66.6% {
+        margin-left: -200%;
+    }
+
+    97.5% {
+        margin-left: -200%;
+    }
+
+    100% {
+        margin-left: 0;
+    }
+}
+
+/***************************壁纸主体*******************************/
+.main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#colimg {
+    column-gap: 8px;
+    animation-delay: 2s;
+    /*使动画延迟两秒*/
+}
+
+
+/*分栏效果*/
+.con-img {
+    column-count: 3;
+}
+
+.col-2 {
+    column-count: 2;
+}
+
+.col-4 {
+    column-count: 4;
+}
+
+.col-6 {
+    column-count: 6;
+}
+
+.col-8 {
+    column-count: 8;
+}
+
+#colimg img {
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+    opacity: 0.9;
+    /*添加透明效果*/
+}
+
+#colimg img:hover {
+    opacity: 1.0;
+}
+
+
+/********************壁纸主体结束*************************************************/
+
+
+/**************************页面底部*******************************/
+.footer {
+    background-color: #000000;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px;
+}
+.footer p{
+    line-height: 30px;
+}
+
+/***************放大图片显示界面*************************************************/
+.pag-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+    background-color: black;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    /*隐藏窗口*/
+    
+}
+
+.pag-img::-webkit-scrollbar{
+    display:none;
+    }
+
+/*提示文字*/
+#test {
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+#close{
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    display: block;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    /*把鼠标指针改为小手*/
+}
+#close:hover{
+    color: #ff0000;
+}
+
+/*上一张*/
+#forward {
+    color: #f1f1f1;
+    font-size: 70px;
+    cursor: pointer;
+    /*把鼠标指针改为小手*/
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 5%;
+    bottom: 0;
+    user-select: none;
+    /*禁止选中文字*/
+}
+
+/*下一张*/
+#next {
+    color: #f1f1f1;
+    font-size: 70px;
+    cursor: pointer;
+    /*把鼠标指针改为小手*/
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    user-select: none;
+    /*禁止选中文字*/
+}
+
+
+
+/********壁纸描述***************/
+#i-alt {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+    /*把鼠标指针改为小手*/
+}
+#i-alt a{
+    font-size: 20px;
+    font-weight: lighter;
+    color: white;
+}
+#show-img {
+    margin: auto;
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: 700px;
+    overflow: auto;
+    border: 2px solid #ffffff;
+}
+
+#wapper img{
+    
+}
+
+/*拖动的水平条*/
+.scroll{
+    width: 370px;
+    height: 8px;
+    background-color: #FFFFFF;
+    position: relative;
+    margin: 20px auto;
+}
+.bar{
+    width: 10px;
+    height: 22px;
+    background-color: #ffbd00;
+    position: absolute;
+    top: -7px;
+    left: 0;
+    cursor: pointer;
+}
+.mask{
+    width: 0;
+    height: 100%;
+    background-color: #336699;
+}
+
+
+/*****************放大图片界面结束*******************/
+
+/************************分栏按钮*************************/
+#colpag {
+    width: 50px;
+    height: 250px;
+    position: fixed;
+    top: 35%;
+    right: 8%;
+    font-weight: bold;
+}
+
+#columns {
+    width: 50px;
+    height: 250px;
+    color: white;
+    margin-left: 100px;
+    position: relative;
+}
+
+/*伪类设置分隔符*/
+#columns::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    height: 30px;
+    width: 5px;
+    background-color: #f39c81;
+}
+
+#columns div {
+    background: black;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    user-select: none;
+    /*禁止选中文字*/
+    text-align: center;
+    margin-bottom: 7px;
+}
+
+#columns div:hover {
+    color: #f39c81;
+    opacity: 0.7;
+    border-left: #f39c81 solid 3px;
+
+}
+
+/************************分栏按钮结束*************************/
+
+
+/**********************回到顶部*****************************/
+
+#open-ding {
+    width: 30px;
+    height: 50px;
+    background-color: #000000;
+    text-align: center;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    border-radius: 5px;
+}
+
+#open-ding a {
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFFFFF;
+    display: block;
+    text-decoration: none;
+}
+#open-ding a:hover{
+    color: #ffbd00;
+}
+
+
+/**********************回到顶部结束*****************************/
+
+
+/*在手机或小屏幕上使用两行显示壁纸*/
+@media screen and (max-width: 767px) {
+    .main {
+        width: 90%;
+    }
+
+    .con-img {
+        column-count: 2;
+    }
+
+    .view {
+        width: 90%;
+        height: 220px;
+    }
+    /*图片变小*/
+    #show-img {
+
+        width: 80%;
+        height: auto;
+    }
+
+    #open-ding {
+        bottom: 50px;
+        right: 5px;
+    }
+}
