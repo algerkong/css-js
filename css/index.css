@@ -1,6 +1,9 @@
 * {
     margin: 0;
     padding: 0;
+    border: 0;
+    user-select: none;
+    /*禁止选中文字*/
 }
 
 html body {
@@ -60,6 +63,7 @@ a{text-decoration: none;}
     height: 30px;
     border-radius: 15px;
     background-color: crimson;
+    /*动画延迟*/
     animation-duration: 8s;
 }
 
@@ -173,7 +177,7 @@ a{text-decoration: none;}
 
 .view ul {
     width: 300%;
-    /* transition: all 0.5s; */
+    transition: all 0.5s;
     animation: mLeft 20s infinite;
 }
 
@@ -240,8 +244,10 @@ a{text-decoration: none;}
 
 #colimg {
     column-gap: 8px;
-    animation-delay: 2s;
+    animation-delay: 4s;
     /*使动画延迟两秒*/
+    user-select: none;
+    /*禁止选中文字*/
 }
 
 
@@ -271,8 +277,13 @@ a{text-decoration: none;}
     width: 100%;
     height: auto;
     margin-bottom: 8px;
+    box-shadow: 1px 1px 5px 3px #EDEDED;
     opacity: 0.9;
     /*添加透明效果*/
+}
+
+#colimg img::before{
+    content: '123123';
 }
 
 #colimg img:hover {
@@ -303,11 +314,11 @@ a{text-decoration: none;}
     width: 100%;
     height: 100%;
     padding-top: 30px;
-    background-color: black;
     overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: #FFFFFF;
     display: none;
+    /* background-color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.726); */
     /*隐藏窗口*/
     
 }
@@ -318,7 +329,7 @@ a{text-decoration: none;}
 
 /*提示文字*/
 #test {
-    color: white;
+    color: #000000;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -328,7 +339,7 @@ a{text-decoration: none;}
     position: absolute;
     top: 15px;
     right: 35px;
-    color: #f1f1f1;
+    color: #000000;
     display: block;
     font-size: 50px;
     font-weight: bold;
@@ -341,7 +352,7 @@ a{text-decoration: none;}
 
 /*上一张*/
 #forward {
-    color: #f1f1f1;
+    color: #000000;
     font-size: 70px;
     cursor: pointer;
     /*把鼠标指针改为小手*/
@@ -358,7 +369,7 @@ a{text-decoration: none;}
 
 /*下一张*/
 #next {
-    color: #f1f1f1;
+    color: #000000;
     font-size: 70px;
     cursor: pointer;
     /*把鼠标指针改为小手*/
@@ -387,7 +398,7 @@ a{text-decoration: none;}
 #i-alt a{
     font-size: 20px;
     font-weight: lighter;
-    color: white;
+    color: #000000;
 }
 #show-img {
     margin: auto;
@@ -396,20 +407,19 @@ a{text-decoration: none;}
     height: auto;
     max-height: 700px;
     overflow: auto;
-    border: 2px solid #ffffff;
-}
-
-#wapper img{
-    
+    background-color: #000000;
+    border: 3px solid #000000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 /*拖动的水平条*/
 .scroll{
     width: 370px;
     height: 8px;
-    background-color: #FFFFFF;
+    background-color: #000000;
     position: relative;
     margin: 20px auto;
+    z-index: 1;
 }
 .bar{
     width: 10px;
@@ -535,3 +545,33 @@ a{text-decoration: none;}
         right: 5px;
     }
 }
+
+
+@-webkit-keyframes zoomIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(.3, .3, .3);
+              transform: scale3d(.3, .3, .3);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(.3, .3, .3);
+              transform: scale3d(.3, .3, .3);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  .zoomIn {
+    -webkit-animation-name: zoomIn;
+            animation-name: zoomIn;
+  }

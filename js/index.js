@@ -37,14 +37,22 @@ for (var i = 0; i < imgs.length - 1; i++) {
         }
         forwards.onclick = function () {
             count--;
-            showimgs.src = imgs[count].src;
-            showimgs.alt = this.alt; // 把图片描述附给窗口图片
-            imgText.innerText = showimgs.alt; // 把图片描述附给描述文字
+            if (count < imgs.length) {
+                showimgs.src = imgs[count].src;
+                showimgs.alt = this.alt; // 把图片描述附给窗口图片
+                imgText.innerText = showimgs.alt; // 把图片描述附给描述文字
+            }else{
+                alert("没有上一张了");
+            }
         }
         nexts.onclick = function () {
             count++;
+           if(count<imgs.length){
             showimgs.src = imgs[count].src;
             imgText.innerText = showimgs.alt; // 把图片描述附给描述文字
+           }else{
+            alert("没有下一张了");
+        }
         }
 
         /*不用的旋转 */
@@ -125,7 +133,7 @@ var btn1 = document.getElementById("openLogin");
 
 var btn_open = document.getElementById("load-o");
 
-btn_open.onclick = function(){
+btn_open.onclick = function () {
     login.style.display = "block";
 }
 
@@ -140,38 +148,53 @@ btn_open.onclick = function(){
 /** *****************终于实现了的拖动旋转图片**************************** */
 
 var scrollBar = document.getElementById("scrollBar");
-	var bar = scrollBar.children[0];
-	var mask = scrollBar.children[1];
-	var demo = document.getElementById("demo");
-	var imgt = document.getElementById("show-img");
+var bar = scrollBar.children[0];
+var mask = scrollBar.children[1];
+var demo = document.getElementById("demo");
+var imgt = document.getElementById("show-img");
 
-	
-	// 拖动原理
-	bar.onmousedown = function(event){
-		var event = event || window.event;
-		var leftVal = event.clientX - this.offsetLeft;
-		// 拖动放到down的里面
-		var that = this;
-		document.onmousemove = function(event){
-			var event = event || window.event;
-			that.style.left = event.clientX - leftVal + "px";
-			// 限制条件
-			var val = parseInt(that.style.left);
-			if(val < 0){
-				that.style.left = 0;
-			}else if(val > 360){
-				that.style.left = "360px";
-			}
-			// 移动的距离为遮罩的宽度
-			mask.style.width = that.style.left;
-			// 图片旋转
-			imgt.style.transform = "rotate("+ parseInt(parseInt(that.style.left)) +"deg"+")"; 
 
-			// 清除拖动 --- 防止鼠标已经弹起时还在拖动
-			window.getSelection ? window.getSelection().removeAllRanges():document.selection.empty();
-		}
-		// 鼠标抬起停止拖动
-		document.onmouseup = function(){
-			document.onmousemove = null;
-		}
-	}
+// 拖动原理
+bar.onmousedown = function (event) {
+    var event = event || window.event;
+    var leftVal = event.clientX - this.offsetLeft;
+    // 拖动放到down的里面
+    var that = this;
+    document.onmousemove = function (event) {
+        var event = event || window.event;
+        that.style.left = event.clientX - leftVal + "px";
+        // 限制条件
+        var val = parseInt(that.style.left);
+        if (val < 0) {
+            that.style.left = 0;
+        } else if (val > 360) {
+            that.style.left = "360px";
+        }
+        // 移动的距离为遮罩的宽度
+        mask.style.width = that.style.left;
+        // 图片旋转
+        imgt.style.transform = "rotate(" + parseInt(parseInt(that.style.left)) + "deg" + ")";
+
+        // 清除拖动 --- 防止鼠标已经弹起时还在拖动
+        window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+    }
+    // 鼠标抬起停止拖动
+    document.onmouseup = function () {
+        document.onmousemove = null;
+    }
+}
+
+
+//点击动画效果
+//感谢CSDN博主「monkeyfly007」
+$("#colimg img").bind("click",function(event) {
+    // $(this).className='zoomIn';
+    $(this).css('animation', 'zoomIn 0.8s');
+});
+$("span.msg-data").each(function() {
+    $(this)[0].addEventListener("animationend",function(){
+        $(this).css("animation","");
+    });
+});
+
+
