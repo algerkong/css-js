@@ -41,18 +41,18 @@ for (var i = 0; i < imgs.length - 1; i++) {
                 showimgs.src = imgs[count].src;
                 showimgs.alt = this.alt; // 把图片描述附给窗口图片
                 imgText.innerText = showimgs.alt; // 把图片描述附给描述文字
-            }else{
+            } else {
                 alert("没有上一张了");
             }
         }
         nexts.onclick = function () {
             count++;
-           if(count<imgs.length){
-            showimgs.src = imgs[count].src;
-            imgText.innerText = showimgs.alt; // 把图片描述附给描述文字
-           }else{
-            alert("没有下一张了");
-        }
+            if (count < imgs.length) {
+                showimgs.src = imgs[count].src;
+                imgText.innerText = showimgs.alt; // 把图片描述附给描述文字
+            } else {
+                alert("没有下一张了");
+            }
         }
 
         /*不用的旋转 */
@@ -145,7 +145,7 @@ btn_open.onclick = function () {
 
 
 
-/** *****************终于实现了的拖动旋转图片**************************** */
+/** *****************终于实现了的拖动旋转图片****************************** */
 
 var scrollBar = document.getElementById("scrollBar");
 var bar = scrollBar.children[0];
@@ -185,16 +185,22 @@ bar.onmousedown = function (event) {
 }
 
 
-//点击动画效果
-//感谢CSDN博主「monkeyfly007」
-$("#colimg img").bind("click",function(event) {
-    // $(this).className='zoomIn';
-    $(this).css('animation', 'zoomIn 0.8s');
-});
-$("span.msg-data").each(function() {
-    $(this)[0].addEventListener("animationend",function(){
-        $(this).css("animation","");
-    });
-});
+// //点击动画效果
+// //感谢CSDN博主「monkeyfly007」
+// $("#colimg img").bind("click",function(event) {
+//     // $(this).className='zoomIn';
+//     $(this).css('animation', 'zoomIn 0.8s');
+// });
+// $("span.msg-data").each(function() {
+//     $(this)[0].addEventListener("animationend",function(){
+//         $(this).css("animation","");
+//     });
+// });
 
 
+
+// function imgst(){
+//     for(var i = 0; i<imgs.length; i++){
+//         imgs[i].
+//     }
+// }

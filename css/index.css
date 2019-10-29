@@ -4,6 +4,7 @@
     border: 0;
     user-select: none;
     /*禁止选中文字*/
+    
 }
 
 html body {
@@ -23,7 +24,7 @@ a{text-decoration: none;}
     width: 100%;
     min-height: 100%;
     height: auto;
-    z-index: 999;
+    z-index: 3;
     display: block;
     animation-delay: 4s;
     padding-top: 200px;
@@ -227,12 +228,8 @@ a{text-decoration: none;}
         margin-left: -200%;
     }
 
-    97.5% {
-        margin-left: -200%;
-    }
-
     100% {
-        margin-left: 0;
+        margin-left: -200%;
     }
 }
 
@@ -365,6 +362,7 @@ a{text-decoration: none;}
     bottom: 0;
     user-select: none;
     /*禁止选中文字*/
+    z-index: 1;
 }
 
 /*下一张*/
@@ -374,7 +372,7 @@ a{text-decoration: none;}
     cursor: pointer;
     /*把鼠标指针改为小手*/
     width: 100px;
-    height: 100px;
+    height: 100px;  
     margin: auto;
     position: absolute;
     top: 0;
@@ -382,6 +380,7 @@ a{text-decoration: none;}
     bottom: 0;
     user-select: none;
     /*禁止选中文字*/
+    z-index: 1;
 }
 
 
