@@ -189,7 +189,7 @@ a{text-decoration: none;}
     position: relative;
 }
 
-#v-left {
+.v-left {
     position: absolute;
     top: 400px;
     right: 50px;
