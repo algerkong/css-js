@@ -1,0 +1,565 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.block {
+    display: block;
+}
+
+/*设置图片文字不被选择*/
+body {
+    user-select: none;
+    overflow-x: hidden;
+}
+
+/*body::-webkit-scrollbar {*/
+/*    display: none*/
+/*}*/
+
+
+/*************************加载界面**************************/
+#main-pag {
+    background-color: #FFFFFF;
+    background-image: url("https://picsum.photos/1730/1200?blur=3");
+    background-size: 100%;
+    /*background-size: 100% 100%;*/
+    position: fixed;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    z-index: 3;
+    display: block;
+    animation-delay: 4s;
+    padding-top: 200px;
+    overflow: hidden;
+    color: #333333;
+    text-shadow: 3px 3px 5px #ffffff6b;
+}
+
+.loading-logo {
+    font-size: 80px;
+    height: 200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.loading-text {
+    font-size: 30px;
+    width: 800px;
+    height: 200px;
+    margin: 0 auto;
+    padding-top: 200px;
+    text-align: center;
+}
+
+.loading-pag {
+    overflow: hidden;
+    width: 70%;
+    height: 30px;
+    position: absolute;
+    top: 45%;
+    left: 15%;
+    border-radius: 15px;
+    border: 3px solid #333333;
+}
+
+.loading {
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    background-color: crimson;
+    /*动画延迟*/
+    animation-duration: 2s;
+}
+
+/*************************加载界面**************************/
+
+
+/*--------------logo-------------*/
+#banner-box {
+    width: 100%;
+    height: 400px;
+    background-image: url("https://picsum.photos/1730/800?blur=3");
+}
+
+#banner-page {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    filter: brightness(70%);
+}
+#banner-page>#banner-img{
+    transition: 2s;
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(10px);
+}
+
+/*.bannerBack {*/
+/*    background-image: url("https://picsum.photos/1730/800?blur=3");*/
+/*}*/
+
+.banner {
+    width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 1;
+    top: 90px;
+    left: 0;
+    right: 0;
+    text-shadow: 3px 3px 5px #ffffff6b;
+}
+
+.logo {
+    display: block;
+    font-size: 60px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1.5em;
+}
+
+.banner #jinrishici-sentence {
+    color: #fff;
+}
+
+
+input#search {
+    border: none;
+    margin: 20px 0;
+    width: 100%;
+    height: 48px;
+    padding: 0 60px;
+    box-sizing: border-box;
+    font-size: 18px;
+    color: #2d2d2d;
+    box-shadow: 2px 2px 7px #0000007d;
+    background-color: #ffffffbf;
+}
+
+.search-page {
+    position: relative;
+}
+
+#on-search {
+    position: absolute;
+    top: 28px;
+    left: 15px;
+    width: 32px;
+    height: 32px;
+    background-size: 100%;
+    background-image: url("https://s1.ax1x.com/2020/06/15/NChiAH.png");
+    cursor: pointer;
+}
+
+
+/*--------------logo-------------*/
+
+/*主页面内容*/
+#main {
+    width: 1300px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 6250px;
+    /*overflow: hidden;*/
+}
+
+.item-page {
+    width: 325px;
+    box-sizing: border-box;
+    padding: 10px;
+    /*overflow: hidden;*/
+    position: relative;
+    counter-increment: item-conter;
+}
+
+.item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    animation: item-background 6s;
+    vertical-align: bottom;
+    z-index: 1;
+    transition: all .2s cubic-bezier(.72, .25, .04, 1.37);
+}
+
+/*item点击放大*/
+.item-click {
+    transform: scale(2.5);
+    box-shadow: 3px 4px 7px #00000094;
+    border: 5px solid #ffffff;
+    background-color: white;
+    transition: all .4s cubic-bezier(.72, .25, .04, 1.37);
+    z-index: 999;
+}
+
+.item:hover {
+    /*transition: .0s;*/
+    box-shadow: 3px 4px 7px #0000005c;
+}
+
+@keyframes item-background {
+    0% {
+        opacity: 0.8;
+    }
+    25% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    75% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+
+
+.item > img {
+    /*width: 100%;*/
+    height: auto;
+    display: block;
+    transition: 1s all cubic-bezier(.73, .09, .45, 1.04);
+}
+
+.item:hover > img {
+    transition: .0s;
+    filter: brightness(70%);
+}
+
+
+.item .img-content {
+    overflow: hidden;
+    display: none;
+}
+
+
+.item > .img-content > .content-bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+}
+
+.download-img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    background-image: url("../img/download.png");
+    background-size: 100%;
+}
+
+
+span.author {
+    width: 240px;
+    color: #ffffffcc;
+    font-size: 18px;
+    float: left;
+    margin-left: 18px;
+    cursor: default;
+}
+
+span.author:hover {
+    color: #ffffff;
+}
+
+.download {
+    width: 25px;
+    height: 25px;
+    float: right;
+    border-radius: 5px;
+    background-color: #ffffffcc;
+    margin-right: 18px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.download:hover {
+    background-color: #ffffff;
+}
+
+
+.img-content:hover {
+    display: block;
+}
+
+.item > img:hover + .img-link + .img-content {
+    display: block;
+}
+
+.img-content:hover + .img-link {
+    display: block;
+}
+
+.img-dark {
+    filter: brightness(70%);
+}
+
+.img-link {
+    width: 25px;
+    height: 25px;
+    background-color: #ffffffcc;
+    line-height: 30px;
+    text-align: center;
+    color: #000000cc;
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    border-radius: 5px;
+    display: none;
+    cursor: pointer;
+}
+
+.img-link:hover {
+    display: block;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.img-link:hover + .img-content {
+    display: block;
+}
+
+.item > img:hover + .img-link {
+    display: block;
+}
+
+
+.item-page:nth-child(4n+1) {
+    order: 1;
+}
+
+.item-page:nth-child(4n+2) {
+    order: 2;
+}
+
+.item-page:nth-child(4n+3) {
+    order: 3;
+}
+
+.item-page:nth-child(4n) {
+    order: 4;
+}
+
+
+/*------------媒体查询自适应-----------*/
+@media screen and (max-width: 1300px) {
+
+    #main {
+        width: 975px;
+        overflow: hidden;
+    }
+
+    .item-click {
+        transform: none;
+        border: none;
+        box-shadow: none;
+    }
+
+    .item-page:nth-child(4n+1) {
+        order: 1;
+    }
+
+    .item-page:nth-child(4n+2) {
+        order: 2;
+    }
+
+    .item-page:nth-child(4n+3) {
+        order: 3;
+    }
+
+    .item-page:nth-child(4n) {
+        order: 1;
+    }
+
+}
+
+@media screen and (max-width: 975px) {
+
+
+    #banner-page {
+        height: 270px;
+    }
+
+    .banner {
+        width: 80%;
+        min-width: 400px;
+        top: 45px;
+    }
+
+
+    #main {
+        width: 650px;
+        overflow: hidden;
+    }
+
+    .item-click {
+        transform: none;
+        border: none;
+        box-shadow: none;
+    }
+
+    .item-page:nth-child(4n+1) {
+        order: 1;
+    }
+
+    .item-page:nth-child(4n+2) {
+        order: 2;
+    }
+
+    .item-page:nth-child(4n+3) {
+        order: 1;
+    }
+
+    .item-page:nth-child(4n) {
+        order: 2;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+
+    #main {
+        width: 325px;
+        overflow: hidden;
+    }
+
+    .item-click {
+        transform: none;
+        border: none;
+        box-shadow: none;
+    }
+
+    .item-page:nth-child(4n+1) {
+        order: 1;
+    }
+
+    .item-page:nth-child(4n+2) {
+        order: 1;
+    }
+
+    .item-page:nth-child(4n+3) {
+        order: 1;
+    }
+
+    .item-page:nth-child(4n) {
+        order: 1;
+    }
+
+}
+
+/*------------媒体查询自适应-----------*/
+
+
+/*--------图片详情页面---start------------*/
+.show-img {
+    width: 80%;
+    margin: 40px auto 0 auto;
+    height: 700px;
+}
+
+#img-pag img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.4);
+    transition: .5s;
+}
+
+div#img-pag {
+    float: left;
+    width: 800px;
+    min-height: 400px;
+    padding: 15px;
+    background: white;
+    box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+#img-pag {
+    text-align: center;
+    font-size: 20px;
+}
+
+a#img-alt {
+    color: #000000;
+    text-decoration: none;
+    line-height: 60px;
+}
+
+div#img-text {
+    float: right;
+    width: 540px;
+    height: auto;
+    text-align: center;
+}
+
+#img-text p {
+    line-height: 50px;
+    font-size: 20px;
+}
+
+#img-color {
+    overflow: hidden;
+}
+
+.img-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1300px;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 130px;
+}
+
+.img-list > .list-img-page {
+    width: 10%;
+    padding: 0 2.5px;
+    box-sizing: border-box;
+}
+
+.img-list > .list-img-page > img {
+    width: 100%;
+}
+
+
+/* ---------------图片详情页面--end-----------*/
+
+
+#a-item-page {
+    width: 1000px;
+    position: fixed;
+    z-index: 999;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    /*display: none;*/
+    height: 0;
+    overflow: hidden;
+    transition: .5s;
+    /*border: 5px solid #FFFFFF;*/
+    /*background: #FFFFFF;*/
+}
+
+#a-item {
+    width: 100%;
+    height: 100%;
+    border: 10px solid #ffffff;
+    background: #FFFFFF;
+}
+
+#a-item > img {
+    width: 100%;
+    height: auto;
+}

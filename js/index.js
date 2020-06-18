@@ -34,7 +34,7 @@ for (var i = 0; i < imgs.length - 1; i++) {
         // 点击描述文字用新页面打开图片
         imgText.onclick = function () {
             window.open(showimgs.src, "blank");
-        }
+        };
         forwards.onclick = function () {
             count--;
             if (count < imgs.length) {
@@ -44,7 +44,7 @@ for (var i = 0; i < imgs.length - 1; i++) {
             } else {
                 alert("没有上一张了");
             }
-        }
+        };
         nexts.onclick = function () {
             count++;
             if (count < imgs.length) {
@@ -86,7 +86,7 @@ for (var i = 0; i < imgs.length - 1; i++) {
 var closes = document.getElementById("close");
 closes.onclick = function () {
     showpags.style.display = "none";
-}
+};
 
 
 
@@ -107,16 +107,16 @@ var c8 = document.getElementById("col-8");
 
 c2.onclick = function () {
     col.className = "col-2";
-}
+};
 c4.onclick = function () {
     col.className = "col-4";
-}
+};
 c6.onclick = function () {
     col.className = "col-6";
-}
+};
 c8.onclick = function () {
     col.className = "col-8";
-}
+};
 
 
 
